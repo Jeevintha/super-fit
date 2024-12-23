@@ -1,11 +1,17 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-  ],
+    "./index.html",
+    "./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        darkblue : "#1a202c",
+      },
+      animation: {
+        blob: "blob 7s infinite",
+      },
+    },
   },
   plugins: [],
-}
-
+};

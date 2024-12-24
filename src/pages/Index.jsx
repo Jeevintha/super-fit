@@ -27,7 +27,7 @@ const Index = () => {
               <Link to="/track">
                 <Button 
                   size="lg" 
-                  className="bg-white text-darkblue hover:bg-gray-100 transform hover:scale-105 transition-all shadow-lg"
+                  className="bg-blue-600 text-white hover:bg-gray-100 transform hover:scale-105 transition-all shadow-lg"
                 >
                   Get Started
                 </Button>
@@ -36,7 +36,7 @@ const Index = () => {
               <Button 
                 variant="outline"
                 size="lg"
-                className="text-white border-white hover:bg-white/10 backdrop-blur-sm transform hover:scale-105 transition-all"
+                className="text-blue-600 border-white hover:bg-blue-500 hover:text-white backdrop-blur-sm transform hover:scale-105 transition-all"
               >
                 Learn More
               </Button>

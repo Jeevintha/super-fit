@@ -89,13 +89,13 @@ const Track = () => {
               placeholder="0"
             />
           </div>
-          <Button type="submit" className="w-full bg-indigo-600 hover:bg-indigo-700">
+          <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700">
           Save Workout
           </Button>
         </form>
       </Card>
 
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-4xl min-h-screen mx-auto">
         <h2 className="text-2xl font-bold mb-4">Workout History</h2>
         <div className="grid gap-4">
           {workouts.map((workout) => (
@@ -112,6 +112,31 @@ const Track = () => {
                   </p>
                 </div>
               </div>
+            <div className="mt-2">
+              <Button
+                onClick={() => {
+                  setWorkoutName(workout.name);
+                  setWeight(workout.weight);
+                  setReps(workout.reps);
+                  setSets(workout.sets);
+                  setWorkouts(workouts.filter(w => w.id !== workout.id));
+                }}
+                className="bg-green-600 hover:bg-green-700 hover:text-white"
+              >
+                Edit
+              </Button>
+                <Button
+                  onClick={() => {
+                    const updatedWorkouts = workouts.filter(w => w.id !== workout.id);
+                    setWorkouts(updatedWorkouts);
+                    localStorage.setItem("workouts", JSON.stringify(updatedWorkouts));
+                    toast.success("Workout deleted successfully!");
+                  }}
+                  className="bg-red-600 hover:bg-red-700 hover:text-white ml-2"
+                >
+                  Delete
+                </Button>
+            </div>
             </Card>
           ))}
         </div>
